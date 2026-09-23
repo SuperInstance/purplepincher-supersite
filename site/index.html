@@ -213,6 +213,24 @@
   </nav>
 
   <main>
+    <section class="featured" style="border:1px solid var(--hardened);border-radius:8px;padding:1.75rem 2rem;margin-bottom:2.5rem;background:linear-gradient(180deg, rgba(217,139,84,0.07), transparent);">
+      <p style="margin:0 0 .5rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--hardened);">Featured · live demo</p>
+      <h2 style="font-family:var(--display);font-weight:500;font-size:1.6rem;margin:0 0 .6rem;">The 949-agent discovery pipeline, recreated in Quilt — running, deterministic, receipted</h2>
+      <p style="margin:0 0 .8rem;color:var(--shell-dim);">
+        Anthropic's multi-agent genetic-discovery workflow succeeded as a <em>stateless assembly line</em>:
+        no conversational context-passing, only immutable state layers between agent tiers.
+        We rebuilt that architecture at demo scale — 12 workers, four hash-manifested layers,
+        consensus voting, senior evaluation. Every layer replays from genesis;
+        nothing is trusted that isn't hashed. Two independent runs produce byte-identical receipts.
+      </p>
+      <p style="margin:0;">
+        <a href="https://github.com/SuperInstance/quilt-discovery-demo" style="color:var(--hardened);font-family:var(--mono);font-size:.9rem;">github.com/SuperInstance/quilt-discovery-demo →</a>
+        &nbsp;&nbsp;
+        <span class="tag tag-real">✅ demo runs today</span>
+        <span class="tag tag-cond">⚠️ production scale is blueprinted, not run</span>
+      </p>
+    </section>
+
     <section class="hero">
       <h1>The model is the <em>shell</em>.<br>The code is the <em>rigging</em>.<br>The data is <em>alive</em>.</h1>
       <p class="lede">
