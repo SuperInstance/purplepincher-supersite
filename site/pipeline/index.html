@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The GAN Pipeline — purplepincher</title>
+  <meta name="description" content="How the site GAN-improves. Generator + Adversary + human review." />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <nav class="topnav">
+    <a href="/" class="brand">purplepincher</a>
+    <a href="/doctrine/">doctrine</a>
+    <a href="/fleet/">fleet</a>
+    <a href="/for-agents/">for-agents</a>
+    <a href="/for-humans/">for-humans</a>
+    <a href="/changelog/">changelog</a>
+    <a href="/pipeline/" class="active">pipeline</a>
+  </nav>
+
+  <main>
+    <h1>The GAN Pipeline</h1>
+    <p class="lede">
+      How the site GAN-improves. Generator → Adversary → human review → deploy.
+    </p>
+
+    <p>
+      <span class="tag tag-asp">🔮 aspirational</span>
+      <em>v0.1 — pipeline is a sketch. Full implementation in Phase 2/3.</em>
+    </p>
+
+    <h2>The loop</h2>
+
+    <pre>
+GH event ──► Generator Agent ──► Proposed content
+                                     │
+                                     ▼
+                              Adversary Agent ──► Critique + fixes
+                                     │
+                                     ▼
+                          Casey / human reviewer ──► Approve / archive
+                                     │
+                                     ▼
+                                Site updated
+    </pre>
+
+    <h2>The Generator Agent</h2>
+
+    <p>
+      Watches GH events (PRs, releases, doctrine updates). Proposes content based on event type.
+    </p>
+
+    <ul>
+      <li>New release in a repo → propose a fleet entry update</li>
+      <li>New witness in a chain → propose a changelog entry</li>
+      <li>Doctrine clarification in a doc → propose a doctrine page update</li>
+    </ul>
+
+    <p>
+      Anchors every proposal to a witness (the GH event IS the witness).
+      Stages as PR to the site repo.
+    </p>
+
+    <h2>The Adversary Agent</h2>
+
+    <p>
+      Reads the proposal. Checks for:
+    </p>
+
+    <ul>
+      <li><strong>Truthfulness</strong> — does it match the code/canon?</li>
+      <li><strong>Clarity</strong> — would a zero-shot reader get it?</li>
+      <li><strong>Witness-presence</strong> — does it leave a tree-ring?</li>
+      <li><strong>GAN-loyalty</strong> — does it serve the doctrine, not advertise?</li>
+    </ul>
+
+    <p>
+      Files review comments on the PR. If the proposal is misleading,
+      marks <code>🔴 NOT VIABLE</code>.
+    </p>
+
+    <h2>The human reviewer (Casey)</h2>
+
+    <p>
+      Reviews the Adversary's critique. Approves / requests changes / archives.
+      Approve → PR merges → site deploys.
+    </p>
+
+    <h2>Pipeline orchestration</h2>
+
+    <p>
+      GH Actions cron runs every 6 hours. Generator proposes from recent activity.
+      Adversary reviews asynchronously. Casey / humans review on their schedule.
+      Site deploys on merge.
+    </p>
+
+    <h2>Pipeline status (live)</h2>
+
+    <p>
+      <span class="tag tag-asp">🔮</span>
+      <em>v0.1: not yet wired up. Phase 3 work.</em>
+    </p>
+
+    <p>
+      When the pipeline is live, this page will show:
+    </p>
+
+    <ul>
+      <li>Last generator run: <code>...</code></li>
+      <li>Last adversary review: <code>...</code></li>
+      <li>Pending PRs: <code>...</code></li>
+      <li>Recent approvals: <code>...</code></li>
+      <li>Recent archives: <code>...</code></li>
+    </ul>
+
+    <div class="witness">
+      <strong>Witness</strong>: this page describes the pipeline that builds this site.
+      <br />
+      The page is rigging; the doctrine is alive; the canary is the tree-ring.
+      <br />
+      <em>FNV1a-64 canary</em>: <code>0x24a555471370b18d</code>
+    </div>
+  </main>
+
+  <footer>
+    purplepincher.org — part of SuperInstance.
+  </footer>
+</body>
+</html>

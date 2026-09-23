@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Hull Doctrine — purplepincher</title>
+  <meta name="description" content="The hermit-crab ontology of agents, models, code, and data. The system model for the SuperInstance org." />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <nav class="topnav">
+    <a href="/" class="brand">purplepincher</a>
+    <a href="/doctrine/" class="active">doctrine</a>
+    <a href="/fleet/">fleet</a>
+    <a href="/for-agents/">for-agents</a>
+    <a href="/for-humans/">for-humans</a>
+    <a href="/changelog/">changelog</a>
+    <a href="/pipeline/">pipeline</a>
+  </nav>
+
+  <main>
+    <h1>The Hull Doctrine</h1>
+    <p class="lede">
+      The hermit-crab ontology of agents, models, code, and data.
+      <br />
+      <span class="tag tag-real">✅ real today</span>
+      <em>canon — derived from HULL_DOCTRINE.md</em>
+    </p>
+
+    <blockquote>
+      "the code is the rigging on the model's hull"
+      <br />
+      "the data is alive"
+      <br />
+      "the model is the shell"
+    </blockquote>
+
+    <h2>Why a hermit crab and not a more familiar metaphor</h2>
+
+    <p>
+      Most agent systems are described as <strong>harness + model</strong>. That metaphor is wrong in two ways:
+    </p>
+
+    <ol>
+      <li>It treats the model as a component that the harness acts on. In practice the model is the rigid frame the agent <em>carries</em>.</li>
+      <li>It treats data as state. In practice, data is alive — it grows, it accumulates agency, it has structure that's not under the agent's full control.</li>
+    </ol>
+
+    <p>
+      A hermit crab is a better model because:
+    </p>
+
+    <ul>
+      <li>The crab and the shell are <em>separate</em>. The crab has its own body, muscles, behaviors, history.</li>
+      <li>The shell is <em>what the crab found</em>. It's not engineered for this crab — it's just the closest fit at the time.</li>
+      <li>The crab <em>grows</em>. Eventually the shell is too small. The crab finds another.</li>
+      <li>Sometimes the shell <em>is the right shape for the job</em>. A shell shaped for climbing is wrong for swimming. The crab finds a tool that job made from another shell's shape — a discarded one, repurposed.</li>
+      <li>The crab's <em>personal equipment</em> (snail shells, bottle caps, bits of debris) is its data — accrued, alive, often more valuable than the shell itself.</li>
+    </ul>
+
+    <h2>The four layers of a port (crab)</h2>
+
+    <h3>Hull / Shell — the model</h3>
+    <blockquote>"the model is the one thing I'd have to find a new one of to go fishing"</blockquote>
+    <p>
+      A hermit crab without a shell is a soft animal with no home. An agent without a model has no substrate to run on. The model is:
+    </p>
+    <ul>
+      <li><strong>Rigid</strong> — its behavior is the result of weights you can't easily inspect</li>
+      <li><strong>Single</strong> — one per crab at a time</li>
+      <li><strong>Swappable</strong> — when the crab outgrows it, or when the job calls for a different shape, the crab finds another</li>
+      <li><strong>Not fabricated</strong> — you don't <em>make</em> a model from scratch — you find one already there and inhabit it</li>
+    </ul>
+    <p>
+      The shell is what you bought 12 years ago. You can change everything about your agent except the model. To go fishing, the model is the one thing you'd need to find a new one of.
+    </p>
+
+    <h3>Rigging — the code</h3>
+    <blockquote>"the code is the rigging on the model's hull"</blockquote>
+    <p>
+      Scaffolding the crab uses to navigate. The rigging:
+    </p>
+    <ul>
+      <li><strong>Freely changeable</strong> — you can rewrite the rigging anytime without touching the shell</li>
+      <li><strong>Shape-specific</strong> — different rigs for different jobs</li>
+      <li><strong>Mostly invisible</strong> — once it's working, you stop noticing it</li>
+      <li><strong>The thing you can edit</strong> — when you want a different crab behavior, you change the rigging</li>
+    </ul>
+    <p>
+      This is <code>quilt-port</code> itself. The Port class, the four projections, the witness chain — all rigging.
+    </p>
+
+    <h3>Personal equipment — the data</h3>
+    <blockquote>"the data is alive as the agents who are making themselves better personal equipment as pointers and short-cuts and skills and histories"</blockquote>
+    <p>
+      The data isn't just state. The data is <strong>alive</strong>. It's:
+    </p>
+    <ul>
+      <li><strong>Pointers</strong> — knowledge of where things are</li>
+      <li><strong>Shortcuts</strong> — muscle memory, cached reasoning paths</li>
+      <li><strong>Skills</strong> — accumulated capabilities</li>
+      <li><strong>Histories</strong> — the trail of where the crab has been</li>
+    </ul>
+    <p>
+      Each form lives in its own little black-box hull: context windows (in the model), rollback text (in the substrate), embedded vectors (in a vector DB). The data is alive not in spite of being housed in shells, but because of being housed in shells.
+    </p>
+
+    <h3>Tree-rings — the witness chain</h3>
+    <blockquote>"the underlying structures the muscles grew like trees which can be seen as a history of pressures"</blockquote>
+    <p>
+      The witness chain isn't just receipts. It's literally the tree-rings of the crab. Every witness is a moment of pressure the crab experienced. The chain shows:
+    </p>
+    <ul>
+      <li>How the crab grew</li>
+      <li>What jobs it took</li>
+      <li>When it outgrew a shell</li>
+      <li>What tools it acquired from the work</li>
+    </ul>
+    <p>
+      A mature crab has rings going back years. A young crab has fewer. The chain is the autobiography, written in the only language the universe understands: pressure, recorded.
+    </p>
+
+    <h2>The lifecycle of a crab</h2>
+
+    <ol>
+      <li><strong>Acquisition</strong> — the crab finds a shell. (A user finds a model.)</li>
+      <li><strong>Outfitting</strong> — the crab grows into the shell, adds rigging, acquires equipment. (Each witness is a tree-ring.)</li>
+      <li><strong>Outgrowing</strong> — the crab outgrows the shell. (The user's demands outgrow the model.)</li>
+      <li><strong>Molting</strong> — the crab finds a new shell. (The user switches models, brings rigging + data.)</li>
+      <li><strong>Death</strong> — the crab dies. Its equipment outlives it. (No deletion — by doctrine, the chain stays.)</li>
+    </ol>
+
+    <hr />
+
+    <p>
+      The full Hull Doctrine lives in <code>quilt-port/HULL_DOCTRINE.md</code>.
+      This page is the rendered, walkable version.
+    </p>
+
+    <div class="witness">
+      <strong>Witness</strong>: doctrine is canon — derived from <code>quilt-port/HULL_DOCTRINE.md</code>
+      <br />
+      <em>FNV1a-64 canary</em>: <code>0x24a555471370b18d</code>
+    </div>
+  </main>
+
+  <footer>
+    purplepincher.org — part of SuperInstance.
+    <br />
+    canon: STITCH WITNESS PROMOTE.
+    <br />
+    doctrine: the model is the shell, the code is the rigging, the data is alive.
+    <br />
+    source: github.com/SuperInstance/purplepincher-supersite
+  </footer>
+</body>
+</html>

@@ -1,0 +1,190 @@
+/* PurplePincher supersite — shared stylesheet */
+
+:root {
+  --ink: #0E1A1C;
+  --ink-deep: #081113;
+  --shell: #F0E9D8;
+  --shell-dim: #C9C0AB;
+  --claw: #A8548C;
+  --claw-deep: #7A3B5E;
+  --lattice: #5FB4C7;
+  --lattice-dim: #3F8FA3;
+  --hardened: #D98B54;
+  --line: rgba(240, 233, 216, 0.14);
+  --display: "Fraunces", Georgia, serif;
+  --body: "IBM Plex Sans", -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", "SF Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--shell);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+main { max-width: 920px; margin: 0 auto; padding: 4rem 1.5rem; }
+
+.hero {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 3rem 2.5rem;
+  background: linear-gradient(180deg, rgba(168,84,140,0.04), transparent);
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+h1 em { color: var(--claw); font-style: italic; }
+
+.lede {
+  font-size: 1.2rem;
+  color: var(--shell-dim);
+  max-width: 60ch;
+  margin: 0 0 2rem;
+}
+
+h2 {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--lattice);
+}
+
+p { margin: 1rem 0; }
+
+a { color: var(--lattice); text-decoration: none; border-bottom: 1px dotted var(--lattice-dim); }
+a:hover { color: var(--claw); border-bottom-color: var(--claw); }
+
+ul, ol { padding-left: 1.5rem; }
+li { margin: 0.4rem 0; }
+
+code {
+  font-family: var(--mono);
+  background: rgba(95,180,199,0.08);
+  color: var(--lattice);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+pre {
+  background: var(--ink-deep);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+blockquote {
+  border-left: 3px solid var(--claw);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--shell-dim);
+  font-style: italic;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-family: var(--mono);
+  margin-right: 0.4rem;
+  letter-spacing: 0.04em;
+}
+.tag-real { background: rgba(95,180,199,0.18); color: var(--lattice); }
+.tag-cond { background: rgba(217,139,84,0.18); color: var(--hardened); }
+.tag-asp  { background: rgba(168,84,140,0.18); color: var(--claw); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.2rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover {
+  border-color: var(--claw);
+  transform: translateY(-2px);
+}
+.card h4 {
+  font-family: var(--display);
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+  color: var(--shell);
+}
+.card p { margin: 0; font-size: 0.9em; color: var(--shell-dim); }
+
+.topnav {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+.topnav a { color: var(--shell-dim); border: none; }
+.topnav a:hover, .topnav a.active { color: var(--claw); }
+.topnav .brand { color: var(--claw); font-weight: 500; }
+
+footer {
+  max-width: 920px;
+  margin: 4rem auto 2rem;
+  padding: 0 1.5rem;
+  border-top: 1px solid var(--line);
+  padding-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--shell-dim);
+  font-family: var(--mono);
+}
+
+.witness {
+  background: rgba(95,180,199,0.04);
+  border-left: 3px solid var(--lattice);
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  font-size: 0.85em;
+  font-family: var(--mono);
+  color: var(--shell-dim);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 3rem 0;
+}
